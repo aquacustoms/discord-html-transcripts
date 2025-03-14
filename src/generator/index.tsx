@@ -36,6 +36,7 @@ export type RenderMessageContext = {
   saveImages: boolean;
   favicon: 'guild' | string;
   hydrate: boolean;
+  type?: "order" | "ticket";
 };
 
 export default async function render({ messages, channel, callbacks, ...options }: RenderMessageContext) {
@@ -49,12 +50,12 @@ export default async function render({ messages, channel, callbacks, ...options 
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="gvrd.tickets.synergycustoms.xyz" />
-        <meta name="twitter:creator" content="@gvrdesire" />
-        <meta name="twitter:title" content="GVRD | Ticket Transcript" />
-        <meta name="twitter:description" content="Explore this and a huge variety of Ticket Transcripts found at Greenville Roleplay Desire. Join Today @ discord.gg/gvrd!" />
-        <meta name="twitter:image" content="https://global.cdn.synergycustoms.xyz/static/gvrd/server/gvrd_logo.png" />
-        <meta name="theme-color" content="#B0D4AC" />
+        <meta name="twitter:site" content={options.type === "order" ? "aqua.orders.synergycustoms.xyz" : "aqua.tickets.synergycustoms.xyz"} />
+        <meta name="twitter:creator" content="@aquacustoms" />
+        <meta name="twitter:title" content={`Aqua Customs | ${options.type === "order" ? "Order Transcript" : "Ticket Transcript"}`} />
+        <meta name="twitter:description" content={`Explore this and a huge variety of ${options.type === "order" ? "Order" : "Ticket"} Transcripts found at Aqua Customs. Join Today @ discord.gg/aquacustoms!`} />
+        <meta name="twitter:image" content="https://global.cdn.synergycustoms.xyz/static/aqua/aqua.png" />
+        <meta name="theme-color" content="#54C1F5" />
 
         {/* favicon */}
         <link

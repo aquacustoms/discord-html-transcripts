@@ -64,6 +64,12 @@ export type GenerateFromMessagesOptions<T extends ExportReturnType> = Partial<{
    * @default false - the returned html will be hydrated client-side
    */
   hydrate: boolean;
+
+  /**
+   * The type of transcript to generate
+   * @default "order"
+   */
+  type: 'order' | 'ticket';
 }>;
 
 export type CreateTranscriptOptions<T extends ExportReturnType> = Partial<
