@@ -69,7 +69,7 @@ export type GenerateFromMessagesOptions<T extends ExportReturnType> = Partial<{
    * The type of transcript to generate
    * @default "order"
    */
-  type: 'order' | 'ticket';
+  transcriptType: 'order' | 'ticket';
 }>;
 
 export type CreateTranscriptOptions<T extends ExportReturnType> = Partial<
